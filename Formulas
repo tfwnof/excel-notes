@@ -2,10 +2,20 @@ Rank without duplicates:
 =RANK(A1,$A$1:$A$10,0)+COUNTIF($A$1:A10,A1)-1
 
 Select range with unknown number of rows:
-$A$2:INDEX($A:$A,COUNTA($A:$A))   
+$A$1:INDEX($A:$A,COUNTA($A:$A))   
 
 return each element in a list once:
 {=IFERROR(INDEX(Table1[Column1], MATCH(0,COUNTIF($A$1:A1, Table1[Column1]), 0)),"")}
 
 average growth (arithmetic), directly from data:
 =(SUMPRODUCT(B1:E1,1/A1:D1)/COUNT(A1:D1))-1
+where:
+  A1:E1 is the range of all elements
+
+Product of returns for a specific date range:
+{=PRODUCT(IF($A$1:$A$100>=C3, IF($A$1:$A$100<=D3,$B$3:$B$100)))}
+where :
+  A:A -> dates
+  B:B -> returns
+  C:C -> Beginning of period
+  D:D -> End of period
