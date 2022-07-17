@@ -19,3 +19,7 @@ where :
   B:B -> returns
   C:C -> Beginning of period
   D:D -> End of period
+
+Conditional sum, where the sum range is variable:
+=SUMIF(rows_range, criteria, index(var_col,0,var_cols_range))
+=SUMIF('2022'!$AD$2:INDEX('2022'!$AD:$AD,COUNTA('2022'!$AD:$AD)),Summary!B4,INDEX('2022'!$D$2:INDEX('2022'!$AC:$AC,COUNTA('2022'!$AC:$AC)),0,MATCH(Summary!$B$2,'2022'!$D$1:$AC$1,0)))
