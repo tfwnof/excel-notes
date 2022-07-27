@@ -23,3 +23,7 @@ where :
 Conditional sum, where the sum range is variable:
 =SUMIF(rows_range, criteria, index(var_col,0,var_cols_range))
 =SUMIF('2022'!$AD$2:INDEX('2022'!$AD:$AD,COUNTA('2022'!$AD:$AD)),Summary!B4,INDEX('2022'!$D$2:INDEX('2022'!$AC:$AC,COUNTA('2022'!$AC:$AC)),0,MATCH(Summary!$B$2,'2022'!$D$1:$AC$1,0)))
+
+Returns an element with the nth largest value with variable columns:
+=INDEX(elements,MATCH(LARGE(INDEX(allvalues,0,MATCH(ref-colname,colsrow,0)),nth_largest),INDEX(allvalues,0,MATCH(ref-colname,colsrow,0)),0))
+=INDEX(Analysis!$B$116:$B$157,MATCH(LARGE(INDEX(Analysis!$C$116:$N$157,0,MATCH(Summary!$B$26,Analysis!$C$115:$N$115,0)),A28),INDEX(Analysis!$C$116:$N$157,0,MATCH(Summary!$B$26,Analysis!$C$115:$N$115,0)),0))
